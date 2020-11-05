@@ -6,9 +6,9 @@
  * 
  */
 
-int LED_R = 8;  
-int LED_G = 9;  
-int LED_B = 10;  
+byte LED_R = 8;  
+byte LED_G = 9;  
+byte LED_B = 10;  
 unsigned char r = 0;
 unsigned char g = 0;
 unsigned char b = 0;
