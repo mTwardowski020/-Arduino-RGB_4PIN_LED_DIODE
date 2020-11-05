@@ -24,6 +24,7 @@ unsigned long ms_interval = 1000; //interval between colour changes
 // the setup function runs once when you press reset or power the board
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
+  Serial.begin(9600);
   pinMode(LED_R, OUTPUT);
   pinMode(LED_G, OUTPUT);
   pinMode(LED_B, OUTPUT);
@@ -34,7 +35,7 @@ void setup() {
 void loop() {
   ms_from_start = millis();
 
-  if (ms_from_start - ms_previous > ms_interval){
+  if (ms_from_start - ms_previous >= ms_interval){
   r = random(0, 255);
   g = random(0, 255);
   b = random(0, 255);
