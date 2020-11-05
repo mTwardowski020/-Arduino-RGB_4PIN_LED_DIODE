@@ -1,5 +1,5 @@
 /*
- * Turns on LED with random colour and change its value randomly.
+ * Turns on LED with random colour and changes it value randomly with specific time interval.
  * 
  * Author: Marek Twardowski / mTwardowski020
  * 
@@ -12,6 +12,10 @@ byte LED_B = 10;
 unsigned char r = 0;
 unsigned char g = 0;
 unsigned char b = 0;
+
+unsigned long ms_from_start = 0;
+unsigned long ms_previous = 0; 
+unsigned long ms_interval = 1000; //interval between colour changes
 
 
 
@@ -26,6 +30,9 @@ void setup() {
 
 // the loop function runs over and over again forever
 void loop() {
+  ms_from_start = millis();
+
+  if (ms_from_start - ms_previous > ms_interval){
   r = random(0, 255);
   g = random(0, 255);
   b = random(0, 255);
@@ -33,8 +40,9 @@ void loop() {
   analogWrite(LED_R, r);
   analogWrite(LED_G, g);
   analogWrite(LED_B, b);  
-
-  delay(1000);
+  ms_previous = ms_from_start;
+  }
+  
   
   
 }
