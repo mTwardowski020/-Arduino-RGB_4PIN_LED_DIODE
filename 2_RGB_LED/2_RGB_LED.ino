@@ -1,5 +1,7 @@
 /*
  * Turns on LED with random colour and changes it value randomly with specific time interval.
+ * Needed components: 4 Pin LED with common cathode, 2x 100Ohm resistor (G,B), 1x 150Ohm Resistor (R)
+ * 
  * 
  * Author: Marek Twardowski / mTwardowski020
  * 
